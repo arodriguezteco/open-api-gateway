@@ -16,16 +16,23 @@ paths:
   /echo:
     get:
       summary: Returns the senders messange
-      operationId: "echo"
+      operationId: "echo-GET"
       x-google-backend:
-        address: https://recomendador-fintech-api-lvm4ek3s2a-uk.a.run.app/echo
+        address: https://sandbox-api-dev-n2tejwieia-uc.a.run.app/echo
+      parameters:
+        - in: query
+          name: message
+          type: string
+          description: Message to be returned
       responses:
         "200":
-          description: Return messange.
+          description: Return message.
           schema:
-            type: "string"
-          
-
+            type: object
+            properties: 
+              message:
+                type: string
+                description: Message content
       
 securityDefinitions:
   api_key:

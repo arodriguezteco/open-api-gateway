@@ -6,7 +6,7 @@ build:
 run:
 	@echo "=========== Starting server ==========="
 	@docker run -it --rm \
-		-p 80:80 \
+		-p 8080:8080 \
 		-v ${PWD}/app:/app \
 		--env-file .env \
 		teco/fintech:latest
