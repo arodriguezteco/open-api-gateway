@@ -1,0 +1,34 @@
+swagger: "2.0"
+
+info:
+  title: OpenAPIdev Specification example
+  description: This is just an example.
+  version: 1.0.0
+schemes:
+  - https
+produces:
+  - application/json
+security:
+  - api_key: []
+
+paths:
+
+  /echo:
+    get:
+      summary: Returns the senders messange
+      operationId: "echo"
+      x-google-backend:
+        address: https://recomendador-fintech-api-lvm4ek3s2a-uk.a.run.app/echo
+      responses:
+        "200":
+          description: Return messange.
+          schema:
+            type: "string"
+          
+
+      
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "key"
+    in: "query"
